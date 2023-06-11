@@ -27,3 +27,21 @@
     padding: 10px;
     margin: 10px;
 }
+
+.res-cards
+{
+    border: 1px solid blue;
+    height: 500px;
+    width: 300px;
+    padding: 5px;
+}
+
+.search
+{
+    padding: 10px;
+}
+.res-logo
+{
+    width: 100%;
+
+}
