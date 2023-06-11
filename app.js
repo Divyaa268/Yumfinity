@@ -42,6 +42,10 @@ const Body = ()=> {
             <div className="search">Search</div>
             <div className="restaurantComp">
                 <RestaurantCards />
+                <RestaurantCards />
+                <RestaurantCards />
+                <RestaurantCards />
+                <RestaurantCards />
             </div>
         </div>
     )

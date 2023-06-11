@@ -28,12 +28,24 @@
     margin: 10px;
 }
 
+.restaurantComp
+{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 .res-cards
 {
-    border: 1px solid blue;
     height: 500px;
     width: 300px;
     padding: 5px;
+}
+
+.res-cards:hover
+{
+    cursor: pointer;
+    border: 1px solid black;
 }
 
 .search
