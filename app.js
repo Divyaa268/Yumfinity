@@ -29,7 +29,7 @@ const RestaurantCards = (props) => {
 
     return (
         <div className="res-cards" style={styleCard}> 
-            <img className ="res-logo" alt="res-logo" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/uws6wm1xndcgtox6moif" />
+            <img className ="res-logo" alt="res-logo" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/" + resData.data.cloudinaryImageId} />
             {/* <h3>{props.resName}</h3>
             <h4>{props.cuisine}</h4> */}
             <h3>{resData.data.name}</h3>
