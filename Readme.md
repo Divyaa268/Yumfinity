@@ -7,6 +7,11 @@ Body
 - Search
 - Reastaurant Contianer
  - Restaurant Cards
+  - Img
+  - Name
+  - Star rating
+  - Cuisines
+  - Delivery Time
 
 Footer 
 - Copyright

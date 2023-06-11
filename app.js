@@ -19,24 +19,29 @@ const Header = ()=>{
 )
 };
 
+const RestaurantCards = () => {
+    return (
+        <div className="res-cards">
+            <h3>Tunday</h3>
+        </div>
+    )
+};
+
 const Body = ()=> {
     return(
         <div className="body">
-            <div className="search"> 
-
+            <div className="search">Search</div>
+            <div className="restaurantComp">
+                <RestaurantCards />
             </div>
-            <div className="restaurantCards">
-
-            </div>
-
         </div>
     )
-
-}
+};
 
 const AppLayout = () =>{
     return (<div className="app">
             <Header/>
+            <Body />
         </div>
     )
 }
