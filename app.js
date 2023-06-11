@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+// Functional component 
 const Header = ()=>{
     return (<div className="header">
         <div className="logo-container">
@@ -17,6 +18,21 @@ const Header = ()=>{
     </div>
 )
 };
+
+const Body = ()=> {
+    return(
+        <div className="body">
+            <div className="search"> 
+
+            </div>
+            <div className="restaurantCards">
+
+            </div>
+
+        </div>
+    )
+
+}
 
 const AppLayout = () =>{
     return (<div className="app">
