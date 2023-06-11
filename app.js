@@ -24,25 +24,32 @@ const styleCard = {
     backgroundColor: "#f0f0f0"
 }
 
-const RestaurantCards = () => {
+const RestaurantCards = (props) => {
     return (
         <div className="res-cards" style={styleCard}> 
             <img className ="res-logo" alt="res-logo" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/uws6wm1xndcgtox6moif" />
-            <h3>Tunday</h3>
-            <h4>Biryani, Kebabs</h4>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
             <h4>4.8 Stars</h4>
             <h4>28 minutes</h4>
         </div>
     )
 };
 
+// we can also do the above code by destructuring it -
+// const RestaurantCards = ({resName, cuisine}) => {
+    // ...
+    // <h3>{resName}</h3>
+    // <h4>{cuisine}</h4>
+
 const Body = ()=> {
     return(
         <div className="body">
             <div className="search">Search</div>
             <div className="restaurantComp">
-                <RestaurantCards />
-                <RestaurantCards />
+                {/* adding props to components */}
+                <RestaurantCards resName="Tunday" cuisine="Mughlai, biryani, kebabs" />
+                <RestaurantCards resName="KFC" cuisine="fast food, burger, bucket" />
                 <RestaurantCards />
                 <RestaurantCards />
                 <RestaurantCards />
