@@ -1,5 +1,5 @@
 
-const restaurantList =   [
+let restaurantList =   [
     {
       "type": "restaurant",
       "data": {

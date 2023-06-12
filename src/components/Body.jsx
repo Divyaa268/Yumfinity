@@ -1760,12 +1760,17 @@ import restaurantList from "../utils/mockData"
 //     }
 //   ];
 
+let restList = restaurantList;
 
 const Body = ()=> {
     return(
         <div className="body">
             <div className="filter">
-                <button className="filter-btn">Top Rated Restaurants</button>
+                <button className="filter-btn" onClick={() => { restList = restList.filter((res) => res.data.avgRating > 4); 
+                    console.log(restList);
+                    }}>
+                    Top Rated Restaurants
+                    </button>
             </div>
             <div className="restaurantComp">
                 {/* adding props to components */}

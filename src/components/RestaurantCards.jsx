@@ -15,7 +15,7 @@ const RestaurantCards = (props) => {
     return (
         <div className="res-cards" style={styleCard}> 
             <img className ="res-logo" alt="res-logo" src={CDN_URL + cloudinaryImageId} />
-            {/* <h3>{props.resName}</h3>
+            {/* <h3>{props.name}</h3>
             <h4>{props.cuisine}</h4> */}
             {/* <h3>{resData.data.name}</h3>
             <h4>{resData.data.avgRating}</h4>
