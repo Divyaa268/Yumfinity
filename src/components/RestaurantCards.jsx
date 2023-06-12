@@ -1,7 +1,4 @@
-// JS Object
-const styleCard = {
-    backgroundColor: "#f0f0f0"
-}
+
 
 const RestaurantCards = (props) => {
     const {resData} = props;
