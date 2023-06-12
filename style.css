@@ -57,3 +57,19 @@
     width: 100%;
 
 }
+
+.filter-btn
+{
+    color: black;
+    background-color: aquamarine;
+    border-radius: 50px;
+    border-color: aquamarine;
+}
+
+.filter-btn:hover
+{
+    cursor: pointer;
+    background-color: yellowgreen;
+    border-color: yellowgreen;
+
+}

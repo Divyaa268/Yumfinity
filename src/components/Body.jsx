@@ -1764,7 +1764,9 @@ import restaurantList from "../utils/mockData"
 const Body = ()=> {
     return(
         <div className="body">
-            <div className="search">Search</div>
+            <div className="filter">
+                <button className="filter-btn">Top Rated Restaurants</button>
+            </div>
             <div className="restaurantComp">
                 {/* adding props to components */}
                 {/* <RestaurantCards resName="Tunday" cuisine="Mughlai, biryani, kebabs" />
