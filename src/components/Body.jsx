@@ -1,10 +1,8 @@
 import RestaurantCards from "./RestaurantCards";
+import restaurantList from "../utils/mockData"
 
 
-// JS Object
-const styleCard = {
-    backgroundColor: "#f0f0f0"
-}
+
 
 // const restaurantList =   [
 //     {
