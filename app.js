@@ -1957,7 +1957,7 @@ const Body = ()=> {
 
 
                 {/* Using MAP we are looping over each item from restaurantList and doing map for each restaurant and then returning a piece of JSX */}
-                {restaurantList.map((restaurant) => ( <RestaurantCards resData={restaurant} />))}
+                {restaurantList.map((restaurant) => ( <RestaurantCards key={restaurant.data.id} resData={restaurant} />))}
               
             </div>
         </div>
