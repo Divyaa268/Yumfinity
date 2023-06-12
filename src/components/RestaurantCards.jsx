@@ -1,3 +1,4 @@
+// named import
 import { CDN_URL } from "../utils/constants";
 
 // JS Object
