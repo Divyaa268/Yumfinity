@@ -40,6 +40,7 @@ const RestaurantCards = (props) => {
             <h4>{resData.data.deliveryTime + " minutes"}</h4>
             <h4>{resData.data.cuisines.join(", ")}</h4> */}
 
+            {/* AFTER DOING OPTIONAL CHAINING */}
             <h3>{name}</h3>
             <h4>{avgRating}</h4>
             <h4>{deliveryTime + " minutes"}</h4>
@@ -1948,11 +1949,15 @@ const Body = ()=> {
                 <RestaurantCards resName="KFC" cuisine="fast food, burger, bucket" /> */}
                 {/* <RestaurantCards resData={restaurantObj}/> */}
 
-                <RestaurantCards resData={restaurantList[0]}/>
+                {/* <RestaurantCards resData={restaurantList[0]}/>
                 <RestaurantCards resData={restaurantList[1]}/>
                 <RestaurantCards resData={restaurantList[2]}/>
                 <RestaurantCards resData={restaurantList[3]}/>
-                <RestaurantCards resData={restaurantList[4]}/>
+                <RestaurantCards resData={restaurantList[4]}/> */}
+
+
+                {/* Using MAP we are looping over each item from restaurantList and doing map for each restaurant and then returning a piece of JSX */}
+                {restaurantList.map((restaurant) => ( <RestaurantCards resData={restaurant} />))}
               
             </div>
         </div>
