@@ -1812,6 +1812,11 @@ const Body = ()=> {
     // to display dynamic data fetched 
     setRestList(json.data.cards[2].data.data.cards);
 
+    //above line using optional chaining
+    // setRestList(json?.data?.cards[2]?.data?.data?.cards);
+
+
+
     };
 
 
