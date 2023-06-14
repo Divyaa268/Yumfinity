@@ -74,3 +74,11 @@
     border-color: yellowgreen;
 
 }
+
+.shimmer-cards
+{
+    height: 300px;
+    width: 200px;
+    background-color: rgb(248, 244, 244);
+    margin: 10px;
+}
