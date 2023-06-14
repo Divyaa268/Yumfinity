@@ -1771,7 +1771,14 @@ const Body = ()=> {
     // let restList = [];
 
     // State Variable - makes changes to ui as well and re-renders it
-    const [restList, setRestList] = useState(restaurantList); // setRestList is used to modify/update the list
+    // const [restList, setRestList] = useState(restaurantList); // setRestList is used to modify/update the list
+    
+
+
+    // Using this for dynamic data
+    const [restList, setRestList] = useState([]);
+
+
 
     // This is array destructuring [restList, setRestList] 
     // can also be written as const arr = useState(restaurantList);
@@ -1801,6 +1808,9 @@ const Body = ()=> {
     const json = await data.json();
 
     console.log(json);
+
+    // to display dynamic data fetched 
+    setRestList(json.data.cards[2].data.data.cards);
 
     };
 
