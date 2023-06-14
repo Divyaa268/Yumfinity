@@ -1827,9 +1827,10 @@ const Body = ()=> {
     // }
 
 
-    // to show loading while data from api is being fetched
+    // to show loading while data from api is being fetched, added Shimmer UI
     if(restList.length == 0)
-    return <h1>Loading....</h1>
+    // return <h1>Loading....</h1>
+    return <Shimmer/>
 
 
     return(

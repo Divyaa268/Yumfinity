@@ -75,6 +75,12 @@
 
 }
 
+.shimmer-container
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .shimmer-cards
 {
     height: 300px;
