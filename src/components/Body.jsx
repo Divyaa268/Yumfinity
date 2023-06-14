@@ -1816,8 +1816,6 @@ const Body = ()=> {
     //above line using optional chaining
     // setRestList(json?.data?.cards[2]?.data?.data?.cards);
 
-
-
     };
 
 
@@ -1827,7 +1825,8 @@ const Body = ()=> {
     // }
 
 
-    // to show loading while data from api is being fetched, added Shimmer UI
+    // to show loading while data from api is being fetched, added Shimmer UI 
+    // This is known as Conditional Rendering
     if(restList.length == 0)
     // return <h1>Loading....</h1>
     return <Shimmer/>
