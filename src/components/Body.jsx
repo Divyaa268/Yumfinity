@@ -1,6 +1,6 @@
 import RestaurantCards from "./RestaurantCards";
 import restaurantList from "../utils/mockData"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
@@ -1779,6 +1779,36 @@ const Body = ()=> {
 
     // where, const restList= arr[0];
     //  const setRestList = arr[1];
+
+
+    // TO FETCH DATA DYNAMICALLY ------------------------
+
+        // useEffect - check notes
+        useEffect(() => {
+            fetchData();
+        }, []);
+
+    const url = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8541536&lng=80.94478269999999&page_type=DESKTOP_WEB_LISTING";
+    
+
+    // Using aync await
+    const fetchData = async() => {
+        const data = await fetch(url);
+    
+
+    // converting the readable stream data to json 
+    // using await here because we wait for the promise to resolve 
+    const json = await data.json();
+
+    console.log(json);
+
+    };
+
+
+    // Using then and catch 
+    // const fetchData = () => {
+    //     fetch(url).then((response) => response.json()).then((data) => console.log(data)).catch((e) => console.log(e));
+    // }
 
 
     return(
