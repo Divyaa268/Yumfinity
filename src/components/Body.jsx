@@ -1780,6 +1780,10 @@ const Body = ()=> {
     const [restList, setRestList] = useState([]);
 
 
+    // Binding search text -
+    const [searchText, setSearchText] = useState("");
+
+
 
     // This is array destructuring [restList, setRestList] 
     // can also be written as const arr = useState(restaurantList);
@@ -1837,7 +1841,10 @@ const Body = ()=> {
             <div className="filter">
 
                 <div>
-                    <input type="text" className="search-bar" placeholder="Search restaurants, foods..."></input>
+                    <input type="text" className="search-bar" value={searchText} placeholder="Search restaurants, foods..." onChange={(e) => 
+                    { setSearchText(e.target.value)
+                    }}>     
+                    </input>
                     <button className="search-btn">Search</button>
                 </div>
 
