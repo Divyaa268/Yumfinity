@@ -1835,6 +1835,13 @@ const Body = ()=> {
     return(
         <div className="body">
             <div className="filter">
+
+                <div>
+                    <input type="text" className="search-bar" placeholder="Search restaurants, foods,,"></input>
+                    <button className="search-btn">Search</button>
+                </div>
+
+
                 <button className="filter-btn"
                  onClick={() => {
                     const filteredList = restList.filter((res) => res.data.avgRating > 4); 
