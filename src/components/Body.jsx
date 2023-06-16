@@ -1845,7 +1845,12 @@ const Body = ()=> {
                     { setSearchText(e.target.value)
                     }}>     
                     </input>
-                    <button className="search-btn">Search</button>
+                     
+                    <button className="search-btn" onClick={() => {
+                        const textFilteredRest = restList.filter(
+                            (res) => res.data.name == searchText
+                        );
+                    }}>Search</button>
                 </div>
 
 
