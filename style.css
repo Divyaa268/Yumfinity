@@ -97,3 +97,26 @@
     border-radius: 20px;
 
 }
+
+.filter
+{
+    display: flex;
+
+}
+
+.search-btn
+{
+    background-color: aquamarine;
+    border-radius: 50px;
+    border-color: aquamarine;
+    margin: 20px;
+}
+
+
+.search-btn:hover
+{
+    cursor: pointer;
+    background-color: yellowgreen;
+    border-color: yellowgreen;
+
+}

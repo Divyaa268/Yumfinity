@@ -1837,7 +1837,7 @@ const Body = ()=> {
             <div className="filter">
 
                 <div>
-                    <input type="text" className="search-bar" placeholder="Search restaurants, foods,,"></input>
+                    <input type="text" className="search-bar" placeholder="Search restaurants, foods..."></input>
                     <button className="search-btn">Search</button>
                 </div>
 
