@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import RestaurantCards from "./components/RestaurantCards";
-import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 
 
@@ -163,6 +163,9 @@ const appRouter = createBrowserRouter([
   },
 ])
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+// root.render(<AppLayout />);
+
+root.render(<RouterProvider router={appRouter} />)
