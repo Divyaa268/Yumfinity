@@ -153,11 +153,13 @@ const AppLayout = () =>{
 // for routing configurations
 const appRouter = createBrowserRouter([
   {
-    path: "/"
+    path: "/",
+    element: <AppLayout />
 
   },
   {
-  path: "/about"
+  path: "/about",
+  element: <About />
   },
 ])
 
