@@ -5,7 +5,7 @@ import Body from "./components/Body";
 import RestaurantCards from "./components/RestaurantCards";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
-
+import Contact from "./components/Contact";
 
 
 // we can also do the above code by destructuring it -
@@ -160,6 +160,10 @@ const appRouter = createBrowserRouter([
   {
   path: "/about",
   element: <About />
+  },
+  {
+    path: "/contact",
+    element: <Contact />
   },
 ])
 
