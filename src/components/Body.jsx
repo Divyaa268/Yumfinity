@@ -1780,6 +1780,10 @@ const Body = ()=> {
     const [restList, setRestList] = useState([]);
 
 
+    // Using for fitltered restaurants only -
+    const [filteredRestaurantsList, setFilteredRestaurantsList] = useState([]);
+
+
     // Binding search text -
     const [searchText, setSearchText] = useState("");
 
@@ -1815,10 +1819,12 @@ const Body = ()=> {
     console.log(json);
 
     // to display dynamic data fetched 
-    setRestList(json.data.cards[2].data.data.cards);
+    // setRestList(json.data.cards[2].data.data.cards);
 
     //above line using optional chaining
-    // setRestList(json?.data?.cards[2]?.data?.data?.cards);
+    setRestList(json?.data?.cards[2]?.data?.data?.cards);
+    
+    setFilteredRestaurantsList(json?.data?.cards[2]?.data?.data?.cards);
 
     };
 
@@ -1851,7 +1857,8 @@ const Body = ()=> {
                             (res) => res.data.name.toLowerCase().includes(searchText.toLowerCase())
                         );
 
-                        setRestList(textFilteredRest);
+                        // setRestList(textFilteredRest);
+                        setFilteredRestaurantsList(textFilteredRest);
                     }}>
                     Search
                     </button>
@@ -1884,7 +1891,7 @@ const Body = ()=> {
                 {/* {restaurantList.map((restaurant) => ( <RestaurantCards key={restaurant.data.id} resData={restaurant} />))} */}
                 
                 
-                {restList.map((restaurant) => ( <RestaurantCards key={restaurant.data.id} resData={restaurant} />))}
+                {filteredRestaurantsList.map((restaurant) => ( <RestaurantCards key={restaurant.data.id} resData={restaurant} />))}
               
 
                 {/* using INDEX as a key */}
