@@ -6,6 +6,7 @@ import RestaurantCards from "./components/RestaurantCards";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Error from "./components/Error";
 
 
 // we can also do the above code by destructuring it -
@@ -154,7 +155,8 @@ const AppLayout = () =>{
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />
+    element: <AppLayout />,
+    errorElement: <Error />
 
   },
   {
