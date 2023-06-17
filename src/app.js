@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import RestaurantCards from "./components/RestaurantCards";
+import { createBrowserRouter } from "react-router-dom";
 
 
 
@@ -147,6 +148,17 @@ const AppLayout = () =>{
         </div>
     )
 }
+
+// for routing configurations
+const appRouter = createBrowserRouter([
+  {
+    path: "/"
+
+  },
+  {
+  path: "/about"
+  },
+])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
