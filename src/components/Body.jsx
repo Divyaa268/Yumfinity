@@ -1848,9 +1848,13 @@ const Body = ()=> {
                      
                     <button className="search-btn" onClick={() => {
                         const textFilteredRest = restList.filter(
-                            (res) => res.data.name == searchText
+                            (res) => res.data.name.toLowerCase().includes(searchText.toLowerCase())
                         );
-                    }}>Search</button>
+
+                        setRestList(textFilteredRest);
+                    }}>
+                    Search
+                    </button>
                 </div>
 
 
