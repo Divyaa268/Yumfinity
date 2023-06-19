@@ -21,22 +21,36 @@ const RestaurantMenu = () => {
         setRestInfo(json.data);
     };
 
+
+    if(restInfo ===null)
+    { 
+        console.log("resInfo is NULL")
+        return <Shimmer/>
+    }
+
     // destructuring -
     const { cuisines, costForTwoMessage, name} = restInfo?.cards[0]?.card?.card.info;
 
-    if(restInfo===null)
-    { console.log("resInfo is NULL")
-        return <Shimmer/>}
+    // const { itemCards } = restInfo?.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+
+    const{itemCards} = restInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+    console.log(itemCards);
 
     return (
         <div className="menu">
-             <h2>{name}</h2>
+            <h2>{name}</h2>
             <h2>{cuisines.join(",")}</h2>
             <h3>{costForTwoMessage}</h3>
-            <h2>Burger</h2>
+            <h2>Menu</h2>
             <ul>
-                <li>Biryani</li>
-                <li>Burgers</li>
+                {itemCards.map((item) => (
+                <li key = {item.card.info.id}> 
+                     {item.card.info.name} - {item.card.info.ptice/100 || item.card.info.defaultPrice/100} </li>))}
+                {/* <l1>{itemCards[0].card.info.name}</l1>
+                <l1>{itemCards[1].card.info.name}</l1>
+                <l1>{itemCards[2].card.info.name}</l1> */}
+                {/* <li>Biryani</li>
+                <li>Burgers</li> */}
             </ul>
         </div>
     )
@@ -106,6 +120,7 @@ export default RestaurantMenu;
 //     const{name,costForTwoMessage,cloudinaryImageId,cuisines} = resInfo?.data?.cards[0]?.card?.card?.info
 
 //     const{itemCards} = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+// const { itemCards } = restInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
 //     // console.log(itemCards)
 
