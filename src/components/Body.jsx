@@ -2,6 +2,7 @@ import RestaurantCards from "./RestaurantCards";
 import restaurantList from "../utils/mockData"
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 
@@ -1891,7 +1892,13 @@ const Body = ()=> {
                 {/* {restaurantList.map((restaurant) => ( <RestaurantCards key={restaurant.data.id} resData={restaurant} />))} */}
                 
                 
-                {filteredRestaurantsList.map((restaurant) => ( <RestaurantCards key={restaurant.data.id} resData={restaurant} />))}
+                {/* USING laink here so that when we click restaurant cards, it shows data for that restaurant */}
+                {filteredRestaurantsList.map((restaurant) => (
+                    <Link key={restaurant.data.id} 
+                    to={"/restaurant/" + restaurant.data.id }> 
+                    <RestaurantCards resData={restaurant} />
+                    </Link>
+                    ))}
               
 
                 {/* using INDEX as a key */}
