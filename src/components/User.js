@@ -1,3 +1,4 @@
+// Functional Component
 const User = () => {
 
     return(
