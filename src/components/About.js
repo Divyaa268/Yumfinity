@@ -5,9 +5,9 @@ const About = () => {
     return(
         <div>
             <h1> Welcome to About Us page</h1>
-            <User />
+            <User name={"Divya from Functional Component"}/>
 
-            <UserClass />
+            <UserClass name={"Divya from Class Component"} location={"Lucknow Class"} />
         </div>
     )
 }
