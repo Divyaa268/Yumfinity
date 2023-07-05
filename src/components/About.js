@@ -37,10 +37,10 @@ class About extends Component
             return(
                 <div>
                     <h1> Welcome to About Us page</h1>
-                    <User name={"Divya from Functional Component"}/>
+                    {/* <User name={"Divya from Functional Component"}/> */}
         
                     <UserClass name={"Divya from Class Component"} location={"Lucknow Class"} />
-                    <UserClass name={"Tanya from Class Component"} location={"Delhi Class"} />
+                    {/* <UserClass name={"Tanya from Class Component"} location={"Delhi Class"} /> */}
                 </div>
             )
         }
