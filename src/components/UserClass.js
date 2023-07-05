@@ -1,4 +1,5 @@
 import React from "react";
+
 // Class Component 
 class UserClass extends React.Component
 {
@@ -17,7 +18,7 @@ class UserClass extends React.Component
 
     render() {
         // destructuring -
-        // const { name, location } = this.props;
+            const { name, location } = this.props;
 
         // destructuring state variable -
         // const { count, count2} = this.state;
@@ -26,8 +27,11 @@ class UserClass extends React.Component
             {/* <h2>Name: {name}</h2>  */}
             <h1> Count: {this.state.count}</h1>
             <h1> Count2: {this.state.count2}</h1>
-            <h2>Name: {this.props.name}</h2>
-            <h3>Location: {this.props.location}</h3>
+            {/* <h2>Name: {this.props.name}</h2>
+            <h3>Location: {this.props.location}</h3> */}
+
+            <h2>Name: {name}</h2>
+            <h3>Location: {location}</h3>
             <h4>Contact: divyaad248@gmail.com</h4>
 
         </div>
