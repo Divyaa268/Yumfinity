@@ -19,9 +19,18 @@ class UserClass extends React.Component
     console.log(this.props.name + " Child constructtor");
     }
 
-    componentDidMount()
+    async componentDidMount()
     {
         console.log(this.props.name + " Child Component Mounted")
+
+        // API Calls
+
+        const data = await fetch("https://api.github.com/users/Divyaa268");
+        const json = await data.json(); // using await here as it returns a promise
+
+        console.log(json);
+
+
     }
 
     render() {
