@@ -1,6 +1,6 @@
 import User from "./User";
 import UserClass from "./UserClass";
-import React from "react";
+import { Component } from "react";
 
 // Functional
 // const About = () => {
@@ -17,7 +17,7 @@ import React from "react";
 // export default About;
 
 
-class About extends React.Component
+class About extends Component
 {
     constructor(props)
     {
@@ -28,7 +28,7 @@ class About extends React.Component
 
     render() 
     {
-        console.log("Render()")
+        console.log(" Parent Render()")
             return(
                 <div>
                     <h1> Welcome to About Us page</h1>

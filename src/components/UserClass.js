@@ -1,5 +1,6 @@
 import React from "react";
 
+
 // Class Component 
 class UserClass extends React.Component
 {
@@ -14,9 +15,17 @@ class UserClass extends React.Component
         count: 0,
         count2: 1,
     }
+
+    console.log("Child constructtor");
+    }
+
+    componentDidMount()
+    {
+        console.log("Child Component Mounted")
     }
 
     render() {
+        console.log("Child Render()")
         // destructuring -
             const { name, location } = this.props;
 
