@@ -26,6 +26,11 @@ class About extends Component
         console.log("Parent Constructor");
     }
 
+    componentDidMount()
+    {
+        console.log("Parent Component Mounted")
+    }
+
     render() 
     {
         console.log(" Parent Render()")
@@ -35,6 +40,7 @@ class About extends Component
                     <User name={"Divya from Functional Component"}/>
         
                     <UserClass name={"Divya from Class Component"} location={"Lucknow Class"} />
+                    <UserClass name={"Tanya from Class Component"} location={"Delhi Class"} />
                 </div>
             )
         }

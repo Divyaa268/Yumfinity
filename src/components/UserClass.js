@@ -16,16 +16,16 @@ class UserClass extends React.Component
         count2: 1,
     }
 
-    console.log("Child constructtor");
+    console.log(this.props.name + " Child constructtor");
     }
 
     componentDidMount()
     {
-        console.log("Child Component Mounted")
+        console.log(this.props.name + " Child Component Mounted")
     }
 
     render() {
-        console.log("Child Render()")
+        console.log(this.props.name + " Child Render()")
         // destructuring -
             const { name, location } = this.props;
 
