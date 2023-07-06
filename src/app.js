@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import { Link } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Grocery from "./components/Grocery";
 
 
 // we can also do the above code by destructuring it -
@@ -170,6 +171,10 @@ const appRouter = createBrowserRouter([
         {
           path: "/contact",
           element: <Contact />
+        },
+        {
+          path:"/grocery",
+          element: <Grocery />
         },
         {
           path: "/restaurant/:resId",
