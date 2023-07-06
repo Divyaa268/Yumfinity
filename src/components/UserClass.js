@@ -50,6 +50,11 @@ class UserClass extends React.Component
 
     }
 
+    componentDidUpdate()
+    {
+        console.log("Component Updated")
+    }
+
     render() 
     {
         console.log(this.props.name + " Child Render()")
