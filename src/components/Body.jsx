@@ -3,6 +3,7 @@ import restaurantList from "../utils/mockData"
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
@@ -1828,6 +1829,14 @@ const Body = ()=> {
     setFilteredRestaurantsList(json?.data?.cards[2]?.data?.data?.cards);
 
     };
+
+
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus == false)
+        return (
+        <h1>Looks like you're offline! Check your internet connection</h1>
+        );
 
 
     // Using then and catch 
