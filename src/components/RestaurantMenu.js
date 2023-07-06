@@ -6,24 +6,29 @@ import { MENUAPI_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
 
-    const [restInfo, setRestInfo] = useState(null);
+    // const [restInfo, setRestInfo] = useState(null);
 
     const { resId } = useParams();
 
-    useEffect( () => {
-        fetchMenu();
-    }, []);
+    
+    // CUSTOM HOOK
+    const restInfo = useRestaurantMenu(resId); 
 
-    const fetchMenu = async () => 
-    {
-        // "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6155712&lng=77.3848373&restaurantId=
-        const data = await fetch(MENUAPI_URL + resId );
-        const json = await data.json();
+    // COMMENTING OUT THIS CODE AS WE CREATED A CUSTOM HOOK FOR IT
+    // useEffect( () => {
+    //     fetchMenu();
+    // }, []);
 
-        console.log(json);
+    // const fetchMenu = async () => 
+    // {
+    //     // "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6155712&lng=77.3848373&restaurantId=
+    //     const data = await fetch(MENUAPI_URL + resId );
+    //     const json = await data.json();
 
-        setRestInfo(json.data);
-    };
+    //     console.log(json);
+
+    //     setRestInfo(json.data);
+    // };
 
 
     if(restInfo ===null)
