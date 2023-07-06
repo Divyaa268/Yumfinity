@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { MENUAPI_URL } from "../utils/constants";
+
 // takes resId and gives restInfo
 const useRestaurantMenu  = (resId) => 
 {
@@ -12,10 +14,10 @@ const useRestaurantMenu  = (resId) =>
      
     const fetchData = async () => 
     {
-        const data = await fetch();
+        const data = await fetch(MENUAPI_URL + resId);
         const json = await data.json();
 
-        setRestInfo(json); // updating with data fetched from API
+        setRestInfo(json.data); // updating with data fetched from API
     }
 
     return restInfo;
