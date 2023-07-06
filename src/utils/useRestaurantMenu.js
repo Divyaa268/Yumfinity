@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MENUAPI_URL } from "../utils/constants";
 
-// takes resId and gives restInfo
+// takes resId and gives restInfo  // FETCH DATA
 const useRestaurantMenu  = (resId) => 
 {
     const [restInfo, setRestInfo] = useState(null); // using state variable to change value after api call
