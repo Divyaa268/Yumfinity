@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import { Link } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Grocery from "./components/Grocery";
+// import Grocery from "./components/Grocery";
 
 
 // we can also do the above code by destructuring it -
@@ -146,6 +146,10 @@ import Grocery from "./components/Grocery";
     // };
 
 
+    // LAZY LOADING
+    const Grocery = lazy(() => import("./components/Grocery"))
+
+
 const AppLayout = () =>{
     return (<div className="app">
             <Header/>
@@ -174,7 +178,7 @@ const appRouter = createBrowserRouter([
         },
         {
           path:"/grocery",
-          element: <Grocery />
+          element: <Suspense><Grocery /></Suspense>
         },
         {
           path: "/restaurant/:resId",
