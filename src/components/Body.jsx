@@ -1854,15 +1854,15 @@ const Body = ()=> {
 
     return(
         <div className="body">
-            <div className="filter">
+            <div className="filter flex">
 
-                <div>
-                    <input type="text" className="search-bar" value={searchText} placeholder="Search restaurants, foods..." onChange={(e) => 
+                <div className="search m-4 p-4">
+                    <input type="text" className="border border-solid border-black" value={searchText} placeholder="Search restaurants, foods..." onChange={(e) => 
                     { setSearchText(e.target.value)
                     }}>     
                     </input>
                      
-                    <button className="search-btn" onClick={() => {
+                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
                         const textFilteredRest = restList.filter(
                             (res) => res.data.name.toLowerCase().includes(searchText.toLowerCase())
                         );
@@ -1874,8 +1874,9 @@ const Body = ()=> {
                     </button>
                 </div>
 
+                <div className="search m-4 p-4 flex items-center">
 
-                <button className="filter-btn"
+                <button className="px-4 py-2 bg-red-600 m-4 rounded-lg"
                  onClick={() => {
                     const filteredList = restList.filter((res) => res.data.avgRating > 4); 
                     setRestList(filteredList);
@@ -1883,8 +1884,12 @@ const Body = ()=> {
                     }}>
                     Top Rated Restaurants
                     </button>
+
+                </div>
+
+                
             </div>
-            <div className="restaurantComp">
+            <div className="flex flex-wrap">
                 {/* adding props to components */}
                 {/* <RestaurantCards resName="Tunday" cuisine="Mughlai, biryani, kebabs" />
                 <RestaurantCards resName="KFC" cuisine="fast food, burger, bucket" /> */}

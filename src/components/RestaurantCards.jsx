@@ -13,8 +13,8 @@ const RestaurantCards = (props) => {
     const {cloudinaryImageId, name, avgRating, deliveryTime, cuisines  } = resData?.data;
 
     return (
-        <div className="res-cards" style={styleCard}> 
-            <img className ="res-logo" alt="res-logo" src={CDN_URL + cloudinaryImageId} />
+        <div className="m-4 p-4 w-[240px]" style={styleCard}> 
+            <img className ="border rounded-lg" alt="res-logo" src={CDN_URL + cloudinaryImageId} />
             {/* <h3>{props.name}</h3>
             <h4>{props.cuisine}</h4> */}
             {/* <h3>{resData.data.name}</h3>
