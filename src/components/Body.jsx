@@ -1,4 +1,4 @@
-import RestaurantCards from "./RestaurantCards";
+import RestaurantCards, {cardWithPromotedLabel} from "./RestaurantCards";
 import restaurantList from "../utils/mockData"
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -1800,6 +1800,10 @@ const Body = ()=> {
 
     console.log("Body rendered" , restList);
 
+    
+    // Higher Order Component from Restaurant card -
+    const RestaurantCardPromoted = cardWithPromotedLabel(RestaurantCards);
+
     // TO FETCH DATA DYNAMICALLY ------------------------
 
         // useEffect - check notes
@@ -1907,12 +1911,14 @@ const Body = ()=> {
                 {/* {restaurantList.map((restaurant) => ( <RestaurantCards key={restaurant.data.id} resData={restaurant} />))} */}
                 
                 
-                {/* USING laink here so that when we click restaurant cards, it shows data for that restaurant */}
+                {/* USING link here so that when we click restaurant cards, it shows data for that restaurant */}
                 {filteredRestaurantsList.map((restaurant) => (
                     <Link key={restaurant.data.id} 
                     to={"/restaurant/" + restaurant.data.id }> 
                     {/* Adding a higher order component for Promoted label to restaurand cards */}
-                    <RestaurantCards resData={restaurant} />
+                    {restaurant.data.promoted ?
+                    (<RestaurantCardPromoted resData={restaurant}/>) : 
+                    (<RestaurantCards resData={restaurant} />)}
                     </Link>
                     ))}
               
