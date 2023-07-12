@@ -1798,6 +1798,7 @@ const Body = ()=> {
     // where, const restList= arr[0];
     //  const setRestList = arr[1];
 
+    console.log("Body rendered" , restList);
 
     // TO FETCH DATA DYNAMICALLY ------------------------
 
@@ -1853,16 +1854,16 @@ const Body = ()=> {
 
 
     return(
-        <div className="body">
+        <div className="bg-yellow-400">
             <div className="filter flex">
 
                 <div className="search m-4 p-4">
-                    <input type="text" className="border border-solid border-black" value={searchText} placeholder="Search restaurants, foods..." onChange={(e) => 
+                    <input type="text" className="border border-solid border-black rounded-lg w-[400px] shadow-xl" value={searchText} placeholder="Search restaurants, foods..." onChange={(e) => 
                     { setSearchText(e.target.value)
                     }}>     
                     </input>
                      
-                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
+                    <button className="px-4 py-2 bg-green-400 m-4 rounded-lg shadow-xl font-semibold" onClick={() => {
                         const textFilteredRest = restList.filter(
                             (res) => res.data.name.toLowerCase().includes(searchText.toLowerCase())
                         );
@@ -1876,7 +1877,7 @@ const Body = ()=> {
 
                 <div className="search m-4 p-4 flex items-center">
 
-                <button className="px-4 py-2 bg-red-600 m-4 rounded-lg"
+                <button className="px-4 py-2 bg-red-600 m-4 rounded-lg shadow-xl font-semibold"
                  onClick={() => {
                     const filteredList = restList.filter((res) => res.data.avgRating > 4); 
                     setRestList(filteredList);
