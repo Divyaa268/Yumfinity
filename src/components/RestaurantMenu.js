@@ -55,8 +55,8 @@ const RestaurantMenu = () => {
 
     return (
         <div className="text-center">
-            <h2 className="font-bold my-5 text-xl">{name}</h2>
-            <h2 className="font-semibold my-2 text-emerald-500">{cuisines.join(",")}</h2>
+            <h2 className="font-bold my-5 text-2xl">{name}</h2>
+            <h2 className="font-semibold my-4 text-emerald-500 text-xl">{cuisines.join(",")}</h2>
             <h3 className="font-semibold my-1 ">{costForTwoMessage}</h3>
             <h2>Menu</h2>
             {/* <ul> */}
