@@ -53,10 +53,10 @@ const RestaurantMenu = () => {
     console.log(itemCards);
 
     return (
-        <div className="menu">
-            <h2>{name}</h2>
-            <h2>{cuisines.join(",")}</h2>
-            <h3>{costForTwoMessage}</h3>
+        <div className="text-center">
+            <h2 className="font-bold my-5 text-xl">{name}</h2>
+            <h2 className="font-semibold my-2 text-emerald-500">{cuisines.join(",")}</h2>
+            <h3 className="font-semibold my-1 ">{costForTwoMessage}</h3>
             <h2>Menu</h2>
             <ul>
                 {itemCards.map((item) => (
