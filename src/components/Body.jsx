@@ -1911,6 +1911,7 @@ const Body = ()=> {
                 {filteredRestaurantsList.map((restaurant) => (
                     <Link key={restaurant.data.id} 
                     to={"/restaurant/" + restaurant.data.id }> 
+                    {/* Adding a higher order component for Promoted label to restaurand cards */}
                     <RestaurantCards resData={restaurant} />
                     </Link>
                     ))}
