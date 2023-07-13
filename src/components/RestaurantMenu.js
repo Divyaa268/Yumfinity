@@ -2,6 +2,7 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 // DISPLAY DATA
 const RestaurantMenu = () => {
@@ -9,6 +10,9 @@ const RestaurantMenu = () => {
     // const [restInfo, setRestInfo] = useState(null);
 
     const { resId } = useParams();
+
+    // Giving 0 as we want first category to be expanded
+    const [showIndex, setShowIndex] = useState(null);
 
 
     // CUSTOM HOOK
@@ -72,11 +76,13 @@ const RestaurantMenu = () => {
 
             {/* categories accordian */}
             {/* collected data from categories and now mapping it to a component */}
-            {categories.map((category) =>   
+            {categories.map((category, index) =>   
             (
-                // using data = to send data to RestaurantCategory component
+                // using data =, showItems, setShowIndex to send data to RestaurantCategory component
                 <RestaurantCategory key={category?.card?.card.title} data = {category?.card?.card}
-                showItems={false}/> 
+                showItems={index == showIndex ? true : false}
+                setShowIndex={() => setShowIndex(index)}
+                /> 
             ))}
         </div>
     )

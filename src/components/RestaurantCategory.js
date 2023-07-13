@@ -3,8 +3,8 @@ import { useState } from "react";
 import ItemList from "./ItemList";
 
 //  receiving data here from RestaurantMenu where we created categories.map
-// Controlled component as RestaurantMenu is controlling it
-const RestaurantCategory = ({data, showItems}) => { 
+// Controlled component as RestaurantMenu (parent) is controlling it
+const RestaurantCategory = ({data, showItems, setShowIndex}) => { 
 
     // console.log(data)
 
@@ -12,7 +12,8 @@ const RestaurantCategory = ({data, showItems}) => {
 
     const handleClick = () => {
 
-        setShowItems(!showItems);
+        // setShowItems(!showItems);
+        setShowIndex();
 
     }
 
