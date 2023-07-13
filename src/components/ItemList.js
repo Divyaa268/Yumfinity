@@ -60,7 +60,14 @@ const ItemList = ({ items }) =>
                     
                     
                     <div className=" w-3/12 p-4">
-                    <img src={CDN_URL + item.card.info.imageId}  className="w-full"/>
+                        <div className="absolute">
+                            <button className="bg-white rounded-md shadow-lg text-green-500 font-semibold p-1 outline hover:outline-2 my-20 ">
+                                Add +
+
+                            </button>
+                        </div>
+
+                        <img src={CDN_URL + item.card.info.imageId}  className="w-full"/>
                     </div>  
                 </div>
                 
