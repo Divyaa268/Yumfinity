@@ -75,7 +75,7 @@ const RestaurantMenu = () => {
             {categories.map((category) =>   
             (
                 // using data = to send data to RestaurantCategory component
-                <RestaurantCategory data = {category?.card?.card}/> 
+                <RestaurantCategory key={category?.card?.card.title} data = {category?.card?.card}/> 
             ))}
         </div>
     )
