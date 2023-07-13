@@ -3,11 +3,12 @@ import { useState } from "react";
 import ItemList from "./ItemList";
 
 //  receiving data here from RestaurantMenu where we created categories.map
-const RestaurantCategory = ({data}) => { 
+// Controlled component as RestaurantMenu is controlling it
+const RestaurantCategory = ({data, showItems}) => { 
 
     // console.log(data)
 
-    const [ showItems, setShowItems ] = useState(false);
+    // const [ showItems, setShowItems ] = useState(false);
 
     const handleClick = () => {
 
