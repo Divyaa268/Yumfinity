@@ -1890,6 +1890,9 @@ const Body = ()=> {
                     Top Rated Restaurants
                     </button>
 
+                    <label className="p-2">User Name</label>
+                    <input className="p-2 border border-black"></input>
+
                 </div>
 
                 
