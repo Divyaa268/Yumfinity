@@ -1,10 +1,10 @@
 import RestaurantCards, {cardWithPromotedLabel} from "./RestaurantCards";
 import restaurantList from "../utils/mockData"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import UserContext from "../utils/UserContext";
 
 
 
@@ -1844,6 +1844,8 @@ const Body = ()=> {
         );
 
 
+    const { loggedInUser, setUserInfo } = useContext(UserContext);
+
     // Using then and catch 
     // const fetchData = () => {
     //     fetch(url).then((response) => response.json()).then((data) => console.log(data)).catch((e) => console.log(e));
@@ -1891,12 +1893,14 @@ const Body = ()=> {
                     </button>
 
                     <label className="p-2">User Name</label>
-                    <input className="p-2 border border-black"></input>
+                    <input className="p-2 border border-black" 
+                    value={loggedInUser}
+                    onChange={(e) => setUserInfo(e.target.value) }></input>
 
                 </div>
 
                 
-            </div>
+            </div> 
             <div className="flex flex-wrap">
                 {/* adding props to components */}
                 {/* <RestaurantCards resName="Tunday" cuisine="Mughlai, biryani, kebabs" />
