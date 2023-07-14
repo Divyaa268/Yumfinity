@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 // Functional component 
 const Header = ()=>{
@@ -9,6 +10,9 @@ const Header = ()=>{
     const [ btnNameReact, setBtnNameReact ] = useState("Login");
 
     const onlineStatus = useOnlineStatus();
+
+    const {loggedInUser} = useContext(UserContext);
+    console.log(loggedInUser);
 
     return (<div className="flex justify-between bg-pink-200 shadow-xl sm:bg-red-500">
         <div className="logo-container">
@@ -38,6 +42,10 @@ const Header = ()=>{
                         btnNameReact == "Login"?
                             setBtnNameReact("Logout"): setBtnNameReact("Login") ;
                     }}> {btnNameReact} </button>
+
+                    <li className="p-4 font-bold">
+                        <Link to="/cart">{loggedInUser}</Link>
+                    </li>
                 </ul>
         </div>
     </div>
