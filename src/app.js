@@ -155,7 +155,7 @@ import UserContext from "./utils/UserContext";
 const AppLayout = () =>{
 
   // Authentication
-  const [userInfo, setUserUnfo] = useState();
+  const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
     // make an API call and send username and password
@@ -163,16 +163,19 @@ const AppLayout = () =>{
       name: "Divya"
     };
 
-    setUserUnfo(data.name);
+    setUserInfo(data.name);
 
   }, []);
 
-    return (<div className="app">
-      <UserContext.Provider value={{ loggedInUser: userInfo}}> 
+    return (
+      // winding the local state variable with the user context
+      // whenever the state var changes, it changes the user context 
+      <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo}}> 
+        <div className="app">
             <Header/>
             <Outlet />
-      </UserContext.Provider>
         </div>
+      </UserContext.Provider>
     )
 }
 
