@@ -11,7 +11,8 @@ const Header = ()=>{
 
     const onlineStatus = useOnlineStatus();
 
-    const {loggedInUser} = useContext(UserContext);
+    // using the created context via useContext
+    const { loggedInUser } = useContext(UserContext);
     console.log(loggedInUser);
 
     return (<div className="flex justify-between bg-pink-200 shadow-xl sm:bg-red-500">
