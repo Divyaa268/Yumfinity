@@ -1844,8 +1844,10 @@ const Body = ()=> {
         );
 
 
+
     const { loggedInUser, setUserInfo } = useContext(UserContext);
 
+    
     // Using then and catch 
     // const fetchData = () => {
     //     fetch(url).then((response) => response.json()).then((data) => console.log(data)).catch((e) => console.log(e));
