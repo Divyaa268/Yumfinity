@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 // Functional component 
 const Header = ()=>{
@@ -11,9 +12,14 @@ const Header = ()=>{
 
     const onlineStatus = useOnlineStatus();
 
+    
     // using the created context via useContext
     const { loggedInUser } = useContext(UserContext);
     console.log(loggedInUser);
+
+
+    // Selector
+    const cartItems = useSelector((store) => store.cart.items) // now this cartItems will get the data of the items array
 
     return (<div className="flex justify-between bg-pink-200 shadow-xl sm:bg-red-500">
         <div className="logo-container">
@@ -34,7 +40,7 @@ const Header = ()=>{
                         <Link to="/contact">Contact Us</Link>
                     </li>
                     <li className="p-4 font-bold">
-                        <Link to="/cart">Cart</Link>
+                        <Link to="/cart">Cart ({cartItems.length})</Link>
                     </li>
                     <li className="p-4 font-bold">
                         <Link to="/grocery">Grocery</Link>
