@@ -36,11 +36,18 @@
 
 // ---------------------------------------------------
 
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 
 const ItemList = ({ items }) =>
 {
     console.log(items);
+
+    const dispatch = useDispatch();
+
+    const handleAddItem = () => {
+        // Dispatch an action
+    }
 
     return(
         <div>
@@ -61,7 +68,8 @@ const ItemList = ({ items }) =>
                     
                     <div className=" w-3/12 p-4">
                         <div className="absolute">
-                            <button className="bg-white rounded-md shadow-lg text-green-500 font-semibold p-1 outline hover:outline-2 my-36 ">
+                            <button className="bg-white rounded-md shadow-lg text-green-500 font-semibold p-1 outline hover:outline-2 my-36 "
+                            onClick={handleAddItem}>
                                 Add +
 
                             </button>
