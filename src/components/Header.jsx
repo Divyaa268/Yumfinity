@@ -12,14 +12,14 @@ const Header = ()=>{
 
     const onlineStatus = useOnlineStatus();
 
-    
+
     // using the created context via useContext
     const { loggedInUser } = useContext(UserContext);
     console.log(loggedInUser);
 
 
     // Selector
-    const cartItems = useSelector((store) => store.cart.items) // now this cartItems will get the data of the items array
+    const cartItems = useSelector((store) => store.cart.items) // now this cartItems will get the data of the items array from cartSlice in store
 
     return (<div className="flex justify-between bg-pink-200 shadow-xl sm:bg-red-500">
         <div className="logo-container">

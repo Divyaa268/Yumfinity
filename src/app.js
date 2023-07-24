@@ -171,8 +171,8 @@ const AppLayout = () =>{
 
     return (
       <Provider store={appStore}>
-      // winding the local state variable with the user context
-      // whenever the state var changes, it changes the user context 
+      {/* // winding the local state variable with the user context
+      // whenever the state var changes, it changes the user context  */}
       <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo}}> 
         <div className="app">
             <Header/>
