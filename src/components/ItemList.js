@@ -46,9 +46,9 @@ const ItemList = ({ items }) =>
 
     const dispatch = useDispatch();
 
-    const handleAddItem = () => {
+    const handleAddItem = (item) => {
         // Dispatch an action
-        dispatch(addItem("pizza"));
+        dispatch(addItem(item));
     }
 
     return(
