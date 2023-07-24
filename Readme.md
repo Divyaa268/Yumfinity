@@ -21,7 +21,7 @@ Footer
 
 # Redux Toolkit
 - Install @reduxjs/toolkit and react-redux
-- Build our Store
+- Build our Store (appStore in utils)
 - Connect our store to our app
 - Create a Slice (CartSlice)
 - Dispatch(action)
