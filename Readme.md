@@ -18,3 +18,6 @@ Footer
 - Links
 - Address
 - Contact
+
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
