@@ -10,6 +10,7 @@ import Error from "./components/Error";
 import { Link } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
 
 // import Grocery from "./components/Grocery";
 
