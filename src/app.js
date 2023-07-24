@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 // import Grocery from "./components/Grocery";
 
@@ -169,6 +170,7 @@ const AppLayout = () =>{
   }, []);
 
     return (
+      <Provider store={appStore}>
       // winding the local state variable with the user context
       // whenever the state var changes, it changes the user context 
       <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo}}> 
@@ -177,6 +179,7 @@ const AppLayout = () =>{
             <Outlet />
         </div>
       </UserContext.Provider>
+      </Provider>
     )
 }
 
