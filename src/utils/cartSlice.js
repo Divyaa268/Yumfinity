@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice(
     {
@@ -15,8 +15,15 @@ const cartSlice = createSlice(
         removeItem: (state) => {
             state.items.pop();
         },
-        clearCart: (state) => {
-            state.items.length = 0;
+        // originalstate = ["pizza"]
+        clearCart: (state) => {  // [pizza]  // state is a local variable
+            console.log(state);  // [pizza]  // we can't read the state directly like this
+            console.log(current(state));  // this will print properly
+            // state = [];   // this just makes the local var empty
+            // console.log(state);  // console will give state = [] but in reality the cart won't get empty as we've just updated the local var
+            state.items.length = 0; // we can also do return [];
+
+            // RTK - either mutate the existing state or return a new state
         }
 
     }
