@@ -33,3 +33,4 @@ Footer
 - Installed Jest
 - Installed Babel dependencies
 - Configure Babel
+- Configure Parcel config file to disable default babel transpilation
