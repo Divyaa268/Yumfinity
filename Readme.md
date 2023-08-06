@@ -26,3 +26,10 @@ Footer
 - Create a Slice (CartSlice)
 - Dispatch(action)
 - Selector
+
+
+# Setting up testing in our app -
+- Installed React Testing Library
+- Installed Jest
+- Installed Babel dependencies
+- Configure Babel
