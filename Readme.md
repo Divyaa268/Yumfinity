@@ -34,4 +34,5 @@ Footer
 - Installed Babel dependencies
 - Configure Babel
 - Configure Parcel config file to disable default babel transpilation
-- Jest cinfiguration
+- Jest configuration
+- Install jsdom library
