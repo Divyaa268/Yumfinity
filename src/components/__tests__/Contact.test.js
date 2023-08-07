@@ -14,3 +14,28 @@ test("Should load Contact Us Component", () => {
     expect(heading).toBeInTheDocument();
 
 })
+
+test("Should load button in Contact Us Component", () => {
+
+    render(<Contact />)
+
+    const button = screen.getByRole("button");
+    //  const button = screen.getByText("Submit");
+
+    // check whether the button is rendered or not
+    // Assertion 
+    expect(button).toBeInTheDocument();
+
+})
+
+test("Should load button in Contact Us Component", () => {
+
+    render(<Contact />)
+
+    const input = screen.getByPlaceholderText("Name");
+
+    // check whether the input text in placeholder is present
+    // Assertion 
+    expect(input).toBeInTheDocument();
+
+})
