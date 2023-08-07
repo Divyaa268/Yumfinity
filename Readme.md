@@ -36,3 +36,4 @@ Footer
 - Configure Parcel config file to disable default babel transpilation
 - Jest configuration
 - Install jsdom library
+- Install @babel/preset-react to make JSX work in test cases.
