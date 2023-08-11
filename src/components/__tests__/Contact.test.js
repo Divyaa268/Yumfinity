@@ -28,7 +28,7 @@ test("Should load button in Contact Us Component", () => {
 
 })
 
-test("Should load button in Contact Us Component", () => {
+test("Should load input name in Contact Us Component", () => {
 
     render(<Contact />)
 
@@ -38,4 +38,17 @@ test("Should load button in Contact Us Component", () => {
     // Assertion 
     expect(input).toBeInTheDocument();
 
+})
+
+test("Should load inputBoxes on contact us page", () => {
+
+    render( <Contact />)
+
+    // Querying - returns a piece of JSX
+    const inputBoxes = screen.getAllByRole("textbox");
+
+    console.log(inputBoxes.length);
+    
+    expect(inputBoxes.length).toBe(2);
+    expect(inputBoxes.length).not.toBe(3);
 })
