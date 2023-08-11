@@ -16,8 +16,8 @@ describe("Contact Us Page Test Case", () => {
         expect(heading).toBeInTheDocument();
     
     })
-    
-    test("Should load button in Contact Us Component", () => {
+    // test can also be called "it"
+    it("Should load button in Contact Us Component", () => {
     
         render(<Contact />)
     
