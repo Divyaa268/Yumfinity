@@ -38,7 +38,8 @@ it("Should load the cart items in Header component", () => {
 
     // const loginButton = screen.getByRole("button");
     // const loginButton = screen.getByText("Login");
-    const cartItems = screen.getByText("Cart (0)");  // in case of multiple buttons
+    // const cartItems = screen.getByText("Cart (0)");  // in case of multiple buttons
+    const cartItems = screen.getByText(/Cart/);  // using regex
     
 
     expect(cartItems).toBeInTheDocument();
