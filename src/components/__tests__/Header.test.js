@@ -23,3 +23,23 @@ it("Should load the login button in Header component", () => {
 
     expect(loginButton).toBeInTheDocument();
 })
+
+
+it("Should load the cart items in Header component", () => {
+
+    render(
+    // store will come from appStore
+    <BrowserRouter>
+    <Provider store={appStore}>
+    <Header />
+    </Provider>
+    </BrowserRouter>
+    );
+
+    // const loginButton = screen.getByRole("button");
+    // const loginButton = screen.getByText("Login");
+    const cartItems = screen.getByText("Cart (0)");  // in case of multiple buttons
+    
+
+    expect(cartItems).toBeInTheDocument();
+})
