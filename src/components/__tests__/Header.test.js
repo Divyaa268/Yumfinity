@@ -16,8 +16,10 @@ it("Should load the login button in Header component", () => {
     </BrowserRouter>
     );
 
-    // const loginButton = screen.getByRole("button");
-    const loginButton = screen.getByText("Login");
+    const loginButton = screen.getByRole("button");
+    // const loginButton = screen.getByText("Login");
+    // const loginButton = screen.getByRole("button", { name:"Login" });  // in case of multiple buttons
+    
 
     expect(loginButton).toBeInTheDocument();
 })
