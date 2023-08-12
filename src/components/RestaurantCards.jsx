@@ -10,8 +10,8 @@ const RestaurantCards = (props) => {
     const {resData} = props;
 
     // optional chaining ?.
-    const {cloudinaryImageId, name, avgRating, deliveryTime, cuisines  } = resData?.data;
-
+    // const {cloudinaryImageId, name, avgRating, deliveryTime, cuisines  } = resData?.data;
+    const {cloudinaryImageId, name, avgRating, deliveryTime, cuisines  } = resData;
     return (
         <div className="m-4 p-4 w-[240px] rounded-lg bg-orange-500 hover:bg-yellow-300 "> 
             <img className ="rounded-lg" alt="res-logo" src={CDN_URL + cloudinaryImageId} />

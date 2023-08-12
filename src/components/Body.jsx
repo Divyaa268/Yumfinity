@@ -1829,9 +1829,16 @@ const Body = ()=> {
     // setRestList(json.data.cards[2].data.data.cards);
 
     //above line using optional chaining
-    setRestList(json?.data?.cards[2]?.data?.data?.cards);
+    // setRestList(json?.data?.cards[2]?.data?.data?.cards);
     
-    setFilteredRestaurantsList(json?.data?.cards[2]?.data?.data?.cards);
+    // setFilteredRestaurantsList(json?.data?.cards[2]?.data?.data?.cards);
+
+    setRestList(
+        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        );
+        setFilteredRestaurantsList(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
 
     };
 
@@ -1856,7 +1863,8 @@ const Body = ()=> {
 
     // to show loading while data from api is being fetched, added Shimmer UI 
     // This is known as Conditional Rendering
-    if(restList.length == 0)
+    
+    if(restList.length === 0)
     // return <h1>Loading....</h1>
     return <Shimmer/>
 
@@ -1873,7 +1881,7 @@ const Body = ()=> {
                      
                     <button className="px-4 py-2 bg-green-400 m-4 rounded-lg shadow-xl font-semibold" onClick={() => {
                         const textFilteredRest = restList.filter(
-                            (res) => res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                            (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
                         );
 
                         // setRestList(textFilteredRest);
@@ -1887,8 +1895,9 @@ const Body = ()=> {
 
                 <button className="px-4 py-2 bg-red-600 m-4 rounded-lg shadow-xl font-semibold"
                  onClick={() => {
-                    const filteredList = restList.filter((res) => res.data.avgRating > 4); 
-                    setRestList(filteredList);
+                    const filteredList = restList.filter((res) => res.info.avgRating > 4); 
+                    // setRestList(filteredList);
+                    setFilteredRestaurantsList(filteredList);
                     console.log(filteredList);
                     }}>
                     Top Rated Restaurants
@@ -1922,12 +1931,12 @@ const Body = ()=> {
                 
                 {/* USING link here so that when we click restaurant cards, it shows data for that restaurant */}
                 {filteredRestaurantsList.map((restaurant) => (
-                    <Link key={restaurant.data.id} 
-                    to={"/restaurant/" + restaurant.data.id }> 
+                    <Link key={restaurant?.info.id} 
+                    to={"/restaurant/" + restaurant?.info.id }> 
                     {/* Adding a higher order component for Promoted label to restaurand cards */}
-                    {restaurant.data.promoted ?
-                    (<RestaurantCardPromoted resData={restaurant}/>) : 
-                    (<RestaurantCards resData={restaurant} />)}
+                    {restaurant?.info.promoted ?
+                    (<RestaurantCardPromoted resData={restaurant?.info}/>) : 
+                    (<RestaurantCards resData={restaurant?.info} />)}
                     </Link>
                     ))}
               
