@@ -9,6 +9,8 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCards = (props) => {
     const {resData} = props;
 
+    console.log(resData);
+    
     // optional chaining ?.
     // const {cloudinaryImageId, name, avgRating, deliveryTime, cuisines  } = resData?.data;
     const {cloudinaryImageId, name, avgRating, deliveryTime, cuisines  } = resData;
