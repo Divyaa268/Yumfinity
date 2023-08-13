@@ -53,7 +53,23 @@ it("Should load Reastaurant Menu Component", async () => {
 
         expect(headerCart2).toBeInTheDocument();
 
-        // we get 2 foodItems from Cart and 3 from Restaurant menu, so expect total 5
+        // we get 2 foodItems from Cart and 3 from Restaurant menu, so expect total 5 on Restaurant menu screen
         expect(screen.getAllByTestId("foodItems").length).toBe(5);
+
+
+        // Clear Cart test case on Cart screen
+        const clearBtn = screen.getByRole("button", { name: "Clear Cart"});
+
+        expect(clearBtn).toBeInTheDocument();
+
+        fireEvent.click(clearBtn);
+
+        // on clearing cart, food items should decrease by 2 from cart in header 
+        // so on restaurant menu screen the food items would be 3 in total now
+        expect(screen.getAllByTestId("foodItems").length).toBe(3);
+        
+        const clearScreen = screen.getByText("Cart is empty! Add something to your cart");
+
+        expect(clearScreen).toBeInTheDocument();
 
 })
