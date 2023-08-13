@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react"
 import Body from "../Body"
+import MOCK_DATA from "../../mocks/mockRestListData.json"
 
 // here the dummy fetch function is exactly like the fetch which the browser gives us
 // global is a global object // defining our own dummy function for fetch which will return a promise 
@@ -8,7 +9,7 @@ import Body from "../Body"
 global.fetch = jest.fn( () => {
     return Promise.resolve({
         json: () => {
-            return Promise.resolve(data);
+            return Promise.resolve(MOCK_DATA);
         }
     })
 })
