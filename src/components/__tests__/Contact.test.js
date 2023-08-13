@@ -5,6 +5,12 @@ import "@testing-library/jest-dom";
 
 describe("Contact Us Page Test Case", () => {
 
+    beforeAll(() => {
+        console.log("Before All")
+    })
+
+    
+
     test("Should load Contact Us Component", () => {
 
         render(<Contact />)
