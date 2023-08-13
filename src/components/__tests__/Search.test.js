@@ -18,6 +18,8 @@ global.fetch = jest.fn(() => {
     })
 })
 
+// INTEGRATION TESTING -
+
 // act returns a promise so are awating for that
 // act takes a callback function
 it("Should Search Restaurant List for burger on Body component", async () => {
@@ -49,4 +51,29 @@ it("Should Search Restaurant List for burger on Body component", async () => {
     expect(resCards.length).toBe(4);
 
     expect(searchBtn).toBeInTheDocument();
+})
+
+// Testing Top Rated Restaurant
+it("Should filter Top Rated Restaurants", async () => {
+
+    await act( async() =>
+    render(
+    <BrowserRouter>
+        <Body />
+    </BrowserRouter>
+    )
+    );
+
+    const cardsBeforeFilter = screen.getAllByTestId("resCard");
+
+    expect(cardsBeforeFilter.length).toBe(20);
+
+    const topRatedBtn = screen.getByRole("button", {name: "Top Rated Restaurants"}) 
+
+    fireEvent.click(topRatedBtn);
+
+    const cardsAfterFilter = screen.getAllByTestId("resCard");
+
+    expect(cardsAfterFilter.length).toBe(13);
+
 })
