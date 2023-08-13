@@ -1798,7 +1798,7 @@ const Body = ()=> {
     // where, const restList= arr[0];
     //  const setRestList = arr[1];
 
-    console.log("Body rendered" , restList);
+    // console.log("Body rendered" , restList);
 
     
     // Higher Order Component from Restaurant card -
@@ -1864,7 +1864,7 @@ const Body = ()=> {
     // to show loading while data from api is being fetched, added Shimmer UI 
     // This is known as Conditional Rendering
     
-    if(restList.length === 0)
+    if(restList.length == 0)
     // return <h1>Loading....</h1>
     return <Shimmer/>
 
@@ -1874,7 +1874,9 @@ const Body = ()=> {
             <div className="filter flex">
 
                 <div className="search m-4 p-4">
-                    <input type="text" className="border border-solid border-black rounded-lg w-[400px] shadow-xl" value={searchText} placeholder="Search restaurants, foods..." onChange={(e) => 
+                    <input type="text" 
+                    data-testid="searchInput"
+                    className="border border-solid border-black rounded-lg w-[400px] shadow-xl" value={searchText} placeholder="Search restaurants, foods..." onChange={(e) => 
                     { setSearchText(e.target.value)
                     }}>     
                     </input>
