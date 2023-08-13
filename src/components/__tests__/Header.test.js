@@ -4,6 +4,8 @@ import { Provider } from "react-redux"
 import appStore from "../../utils/appStore"
 import { BrowserRouter } from "react-router-dom"
 import "@testing-library/jest-dom";
+import { act } from "react-dom/test-utils"
+import useOnlineStatus from '../useOnlineStatus';
 
 it("Should load the login button in Header component", () => {
 
@@ -64,3 +66,23 @@ it("Should change login button to logout in Header component", () => {
 
     expect(logoutButton).toBeInTheDocument();
 })
+
+
+// it("Should check online status", async () => {
+
+//     await act( async => render(
+//         <BrowserRouter>
+//         <Provider store={appStore}>
+//         <Header /> 
+//         </Provider>
+//         </BrowserRouter>
+//     ))
+
+//     const status = screen.getByText(/Online Status/)
+
+//     fireEvent.online(status);
+
+//     expect(status).toBeInTheDocument()
+// })
+
+
