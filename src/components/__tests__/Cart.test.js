@@ -10,7 +10,7 @@ global.fetch = jest.fn(() => {
         json: () => Promise.resolve(MOCK_DATA)
     })
 })
-it("Should load Reastaurant Meu Component", async () => {
+it("Should load Reastaurant Menu Component", async () => {
 
     await act( async => 
         render(
@@ -22,5 +22,17 @@ it("Should load Reastaurant Meu Component", async () => {
 
         // clicking on accordianHeader
         fireEvent.click(accordianHeader);
+
+        const foodItem = screen.getAllByTestId("foodItems");
+
+        expect(foodItem.length).toBe(3);
+
+        // For Add button testing
+
+        const addBtns = screen.getAllByRole("button", { name: "Add +"});
+
+        fireEvent.click(addBtns[0]);  // clicking on first Add + button, header should change
+        
+
 
 })
