@@ -1,7 +1,9 @@
 import RestaurantMenu from "../RestaurantMenu"
 import { act } from "react-dom/test-utils"
-import { render } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import MOCK_DATA from "../mocks/mockResMenu.json"
+import { Provider } from "react-redux"
+import appStore from "../../utils/appStore"
 
 global.fetch = jest.fn(() => {
     return Promise.resolve({
@@ -11,5 +13,14 @@ global.fetch = jest.fn(() => {
 it("Should load Reastaurant Meu Component", async () => {
 
     await act( async => 
-        render(<RestaurantMenu />))
+        render(
+        <Provider store={appStore}> 
+            <RestaurantMenu />
+        </Provider>))
+
+        const accordianHeader = screen.getByText("Kebabs (3)");
+
+        // clicking on accordianHeader
+        fireEvent.click(accordianHeader);
+
 })
