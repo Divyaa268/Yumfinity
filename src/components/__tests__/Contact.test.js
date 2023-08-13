@@ -13,6 +13,10 @@ describe("Contact Us Page Test Case", () => {
         console.log("Before Each")
     })
 
+    afterAll(() => {
+        console.log("After All")
+    })
+
     test("Should load Contact Us Component", () => {
 
         render(<Contact />)
