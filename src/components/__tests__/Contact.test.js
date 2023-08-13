@@ -17,6 +17,10 @@ describe("Contact Us Page Test Case", () => {
         console.log("After All")
     })
 
+    afterEach(() => {
+        console.log("After Each")
+    })
+
     test("Should load Contact Us Component", () => {
 
         render(<Contact />)
