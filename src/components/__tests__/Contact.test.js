@@ -9,7 +9,9 @@ describe("Contact Us Page Test Case", () => {
         console.log("Before All")
     })
 
-    
+    beforeEach(() => {
+        console.log("Before Each")
+    })
 
     test("Should load Contact Us Component", () => {
 
