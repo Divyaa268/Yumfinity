@@ -7,6 +7,7 @@ import appStore from "../../utils/appStore"
 import Header from "../Header"
 import { BrowserRouter } from "react-router-dom"
 import "@testing-library/jest-dom"
+import Cart from "../Cart"
 
 global.fetch = jest.fn(() => {
     return Promise.resolve({
@@ -21,6 +22,7 @@ it("Should load Reastaurant Menu Component", async () => {
         <Provider store={appStore}> 
             <Header />
             <RestaurantMenu />
+            <Cart />
         </Provider>
         </BrowserRouter>
         ))
@@ -51,6 +53,7 @@ it("Should load Reastaurant Menu Component", async () => {
 
         expect(headerCart2).toBeInTheDocument();
 
-
+        // we get 2 foodItems from Cart and 3 from Restaurant menu, so expect total 5
+        expect(screen.getAllByTestId("foodItems").length).toBe(5);
 
 })
