@@ -70,3 +70,14 @@ Footer
 - Install @babel/preset-react to make JSX work in test cases.
 - Include  @babel/preset-react inside my babel config
 - Install  @testing-library/jest-dom
+
+# Glimpse of the app - 
+
+![image](https://github.com/Divyaa268/Yumfinity/assets/117614772/a6f37317-723f-4fa2-a87b-e9870c57a801)
+
+![image](https://github.com/Divyaa268/Yumfinity/assets/117614772/c2e5e07c-6cf0-40c1-becb-d58216efbb31)
+
+![image](https://github.com/Divyaa268/Yumfinity/assets/117614772/0ed6a01b-af42-4377-96e6-cb3b1aaf26e7)
+
+
+
